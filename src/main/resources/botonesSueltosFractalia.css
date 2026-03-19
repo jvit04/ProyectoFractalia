@@ -1,5 +1,5 @@
 .boton-elegante {
-    -fx-background-color: #8c996a;
+    -fx-background-color: #1a1c27;
     -fx-text-fill: #F5F0E6;
     -fx-background-radius: 10;
     -fx-cursor: hand;
@@ -13,14 +13,14 @@
 }
 
 .boton-elegante:hover {
-    -fx-background-color: #d0e39d;
+    -fx-background-color: #1a1c27;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 5, 0, 0, 0);
-    -fx-text-fill: #2f3e28;
+    -fx-text-fill: #F5F0E6;
 
 }
 
 .boton-elegante:pressed {
-    -fx-background-color: #555c3f;
+    -fx-background-color: #14161c;
     -fx-text-fill: #F5F0E6;
 
 }

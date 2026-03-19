@@ -1,11 +1,11 @@
 package controllers;
 
+import javafx.event.ActionEvent; // ¡IMPORTACIÓN CORREGIDA!
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.StackPane;
 
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 public class MainController {
@@ -16,7 +16,7 @@ public class MainController {
     // Método genérico para cambiar la vista
     private void cargarVista(String archivoFxml) {
         try {
-            // Carga el FXML que hizo tu compañero
+            // Carga el FXML que hizo tu compañero desde la carpeta /vistas/
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/vistas/" + archivoFxml));
             Node vista = loader.load();
 
@@ -25,6 +25,7 @@ public class MainController {
             areaContenido.getChildren().add(vista);
 
         } catch (IOException e) {
+            System.err.println("Error al cargar la vista: " + archivoFxml);
             e.printStackTrace();
         }
     }
@@ -38,5 +39,15 @@ public class MainController {
     @FXML
     void mostrarOperaciones(ActionEvent event) {
         cargarVista("DashboardOperaciones.fxml");
+    }
+
+    @FXML
+    void mostrarHardware(ActionEvent event) {
+        cargarVista("DashboardHardware.fxml");
+    }
+
+    @FXML
+    void mostrarTendencias(ActionEvent event) {
+        cargarVista("DashboardTendencias.fxml");
     }
 }
