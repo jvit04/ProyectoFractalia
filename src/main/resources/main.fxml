@@ -30,7 +30,7 @@
 
         <VBox layoutX="5.0" layoutY="80.0" prefHeight="322.0" prefWidth="142.0" spacing="5.0">
             <children>
-                <Button mnemonicParsing="false" onAction="#mostrarFinanzas" prefHeight="70.0" prefWidth="144.0" styleClass="boton-menu" stylesheets="@botonesMenu.css" text="Finanzas" textFill="#1a1c27">
+                <Button mnemonicParsing="false" onAction="#mostrarFinanzas" prefHeight="70.0" prefWidth="144.0" styleClass="boton-menu" stylesheets="@css/botonesMenu.css" text="Finanzas" textFill="#1a1c27">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
@@ -38,17 +38,17 @@
                   <Font name="Roboto Regular" size="12.0" />
                </font>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#mostrarOperaciones" prefHeight="70.0" prefWidth="144.0" styleClass="boton-menu" stylesheets="@botonesMenu.css" text="AIOps">
+                <Button mnemonicParsing="false" onAction="#mostrarOperaciones" prefHeight="70.0" prefWidth="144.0" styleClass="boton-menu" stylesheets="@css/botonesMenu.css" text="AIOps">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#mostrarHardware" prefHeight="70.0" prefWidth="144.0" styleClass="boton-menu" stylesheets="@botonesMenu.css" text="Hardware">
+                <Button mnemonicParsing="false" onAction="#mostrarHardware" prefHeight="70.0" prefWidth="144.0" styleClass="boton-menu" stylesheets="@css/botonesMenu.css" text="Hardware">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#mostrarTendencias" prefHeight="70.0" prefWidth="144.0" styleClass="boton-menu" stylesheets="@botonesMenu.css" text="Tendencias">
+                <Button mnemonicParsing="false" onAction="#mostrarTendencias" prefHeight="70.0" prefWidth="144.0" styleClass="boton-menu" stylesheets="@css/botonesMenu.css" text="Tendencias">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
