@@ -6,5 +6,6 @@ public class Paths {
     public static final String UrlBaseDatos= "jdbc:postgresql://localhost:5432/FractaliaOLAP";
     public static final String USER="postgres";
     public static final String PASSWORD = "Jviteri.5519";
-
+//Usar este comando de git: git config --global core.autocrlf true
+    //si sale este mensaje: warning: in the working copy of 'src/main/resources/DashboardOperaciones.fxml', LF will be replaced by CRLF the next time Git touches it
 }
