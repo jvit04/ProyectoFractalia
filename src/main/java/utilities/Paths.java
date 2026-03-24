@@ -16,5 +16,6 @@ public class Paths {
     public static final String PASSWORD = System.getenv("DB_PASSWORD") != null
             ? System.getenv("DB_PASSWORD")
             : "123456";
-
+//Usar este comando de git: git config --global core.autocrlf true
+    //si sale este mensaje: warning: in the working copy of 'src/main/resources/DashboardOperaciones.fxml', LF will be replaced by CRLF the next time Git touches it
 }
