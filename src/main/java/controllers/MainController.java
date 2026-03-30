@@ -49,6 +49,6 @@ public class MainController {
 
     @FXML
     void mostrarTendencias(ActionEvent event) {
-        cargarVista("DashboardTendencias.fxml");
+        cargarVista("DashboardVentas.fxml");
     }
 }
