@@ -70,7 +70,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#mostrarTendencias" prefHeight="70.0" prefWidth="144.0" styleClass="boton-menu" stylesheets="@css/botonesMenu.css" text="Tendencias">
+                <Button mnemonicParsing="false" onAction="#mostrarTendencias" prefHeight="70.0" prefWidth="144.0" styleClass="boton-menu" stylesheets="@css/botonesMenu.css" text="Ventas">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
