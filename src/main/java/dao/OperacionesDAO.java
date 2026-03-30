@@ -24,7 +24,6 @@ public class OperacionesDAO {
     public List<DatosResolucion> obtenerResolucionPorMes(String complejidadFiltro) {
         List<DatosResolucion> listaDatos = new ArrayList<>();
 
-        // ¡Mira qué limpio queda esto para tu profesora!
         String sql = "SELECT * FROM fn_obtener_resolucion_aiops(?)";
 
         try (Connection conn = ConexionBD.conectar();
