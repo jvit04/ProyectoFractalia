@@ -13,7 +13,6 @@ import java.util.Objects;
 public class App extends Application {
 
     public static void main(String[] args){
-
         launch(args);
     }
 //metodo start de java FX que permite iniciar la aplicación

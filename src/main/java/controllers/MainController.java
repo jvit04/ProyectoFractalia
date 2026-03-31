@@ -33,8 +33,7 @@ public class MainController {
     // Eventos de los botones del menú lateral
     //RECORDAR: poner los .xml dentro de la carpeta vistas
     @FXML
-    void mostrarFinanzas(ActionEvent event) {
-        cargarVista("DashboardFinanzas.fxml");
+    void mostrarFinanzas(ActionEvent event) {cargarVista("DashboardFinanzas.fxml");
     }
 
     @FXML
