@@ -16,11 +16,9 @@ public class MainController {
     // Método genérico para cambiar la vista
     private void cargarVista(String archivoFxml) {
         try {
-            // Carga el FXML que hizo tu compañero desde la carpeta /vistas/
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/vistas/" + archivoFxml));
             Node vista = loader.load();
 
-            // Limpia el área central y pone la nueva vista
             areaContenido.getChildren().clear();
             areaContenido.getChildren().add(vista);
 
@@ -31,7 +29,6 @@ public class MainController {
     }
 
     // Eventos de los botones del menú lateral
-    //RECORDAR: poner los .xml dentro de la carpeta vistas
     @FXML
     void mostrarFinanzas(ActionEvent event) {
         cargarVista("DashboardFinanzas.fxml");
