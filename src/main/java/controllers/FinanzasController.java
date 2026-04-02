@@ -1,5 +1,7 @@
 package controllers;
-
+import java.time.LocalDate;
+import javafx.scene.control.DateCell;
+import javafx.util.Callback;
 import dao.FinanzasDAO;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -32,11 +34,37 @@ public class FinanzasController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        // Configuramos los límites del calendario primero
+        configurarCalendarios();
         cargarDatosGrafico();
+
         fechaInicio.valueProperty().addListener((obs, oldV, newV) -> cargarDatosGrafico());
         fechaFin.valueProperty().addListener((obs, oldV, newV) -> cargarDatosGrafico());
     }
+    private void configurarCalendarios() {
+     //los límites históricos del Data Warehouse
+        LocalDate fechaMinima = LocalDate.of(2023, 1, 1);
+        LocalDate fechaMaxima = LocalDate.of(2026, 12, 31);
 
+        // fábrica de celdas que evaluará cada día en el calendario
+        Callback<DatePicker, DateCell> dayCellFactory = dp -> new DateCell() {
+            @Override
+            public void updateItem(LocalDate item, boolean empty) {
+                super.updateItem(item, empty);
+
+                // Si el día a pintar está fuera de nuestro rango, lo deshabilitamos
+                if (item.isBefore(fechaMinima) || item.isAfter(fechaMaxima)) {
+                    setDisable(true);
+                    // Le damos un aspecto de "deshabilitado" (gris claro)
+                    setStyle("-fx-background-color: #f0f0f0; -fx-text-fill: #b0b0b0;");
+                }
+            }
+        };
+
+        // 3. Aplicamos esta regla a ambos DatePickers
+        fechaInicio.setDayCellFactory(dayCellFactory);
+        fechaFin.setDayCellFactory(dayCellFactory);
+    }
     private void cargarDatosGrafico() {
         graficoIngresos.getData().clear();
         leyendaCustom.getChildren().clear();
@@ -45,7 +73,12 @@ public class FinanzasController implements Initializable {
         java.sql.Date sqlFin = (fechaFin.getValue() != null) ? java.sql.Date.valueOf(fechaFin.getValue()) : null;
         List<FinanzasDAO.DatosFinanzas> datosBD = finanzasDAO.obtenerIngresosPorFechas(sqlInicio, sqlFin);
 
-        if (datosBD == null || datosBD.isEmpty()) return;
+        if (datosBD == null || datosBD.isEmpty()) {
+            graficoIngresos.setTitle("No hay ingresos registrados en estas fechas");
+            return;
+        } else {
+            graficoIngresos.setTitle(""); // Borramos el título si sí hay datos
+        }
         double totalIngresos = datosBD.stream().mapToDouble(d -> d.ingresosGenerados).sum();
         datosBD.sort(Comparator.comparingDouble((FinanzasDAO.DatosFinanzas d) -> d.ingresosGenerados).reversed());
         double sumaOtros = 0;
